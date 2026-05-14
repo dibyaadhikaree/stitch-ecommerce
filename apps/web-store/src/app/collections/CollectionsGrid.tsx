@@ -21,7 +21,7 @@ export default function CollectionsGrid({
         style={{
           padding: "80px 24px",
           textAlign: "center",
-          color: "var(--rych-ash)",
+          color: "var(--stitch-ash)",
         }}
       >
         <p
@@ -40,7 +40,11 @@ export default function CollectionsGrid({
   return (
     <div
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-      style={{ padding: "24px", gap: "1px", backgroundColor: "var(--rych-border)" }}
+      style={{
+        padding: "24px",
+        gap: "1px",
+        backgroundColor: "var(--stitch-border)",
+      }}
     >
       {collections.map((collection, i) => (
         <CollectionTile
@@ -73,12 +77,10 @@ function CollectionTile({
       ref={ref}
       initial={{ opacity: 0, y: reduced ? 0 : 20 }}
       animate={
-        isInView
-          ? { opacity: 1, y: 0 }
-          : { opacity: 0, y: reduced ? 0 : 20 }
+        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: reduced ? 0 : 20 }
       }
       transition={{ duration: reduced ? 0 : 0.6, delay, ease: EASE }}
-      style={{ backgroundColor: "var(--rych-bg)" }}
+      style={{ backgroundColor: "var(--stitch-bg)" }}
     >
       <Link
         href={`/collections/${collection.slug}`}
@@ -89,7 +91,7 @@ function CollectionTile({
           style={{
             position: "relative",
             aspectRatio: "4/3",
-            backgroundColor: "var(--rych-surface)",
+            backgroundColor: "var(--stitch-surface)",
             overflow: "hidden",
           }}
         >
@@ -124,7 +126,7 @@ function CollectionTile({
         <div
           style={{
             padding: "16px 0 8px",
-            backgroundColor: "var(--rych-bg)",
+            backgroundColor: "var(--stitch-bg)",
           }}
         >
           <p
@@ -132,7 +134,7 @@ function CollectionTile({
             style={{
               fontSize: 20,
               fontWeight: 300,
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
               marginBottom: collection.description ? 6 : 10,
             }}
           >
@@ -142,7 +144,7 @@ function CollectionTile({
             <p
               style={{
                 fontSize: 12,
-                color: "var(--rych-ash)",
+                color: "var(--stitch-ash)",
                 lineHeight: 1.55,
                 marginBottom: 10,
               }}
@@ -154,7 +156,7 @@ function CollectionTile({
             style={{
               fontSize: 10,
               letterSpacing: "0.14em",
-              color: "var(--rych-smoke)",
+              color: "var(--stitch-smoke)",
               textTransform: "uppercase",
             }}
           >

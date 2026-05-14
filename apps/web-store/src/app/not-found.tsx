@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export default function NotFound() {
   const reduced = useReducedMotion();
@@ -12,7 +12,7 @@ export default function NotFound() {
   return (
     <main
       className="min-h-screen flex items-center justify-center"
-      style={{ backgroundColor: 'var(--rych-bg)' }}
+      style={{ backgroundColor: "var(--stitch-bg)" }}
     >
       <div className="flex flex-col items-center">
         <motion.div
@@ -20,10 +20,10 @@ export default function NotFound() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: dur(0.6), ease }}
           style={{
-            fontFamily: 'var(--rych-font-display)',
+            fontFamily: "var(--stitch-font-display)",
             fontWeight: 300,
-            fontSize: 'clamp(80px, 15vw, 140px)',
-            color: 'var(--rych-border2)',
+            fontSize: "clamp(80px, 15vw, 140px)",
+            color: "var(--stitch-border2)",
             lineHeight: 1,
           }}
         >
@@ -38,47 +38,55 @@ export default function NotFound() {
         >
           <p
             style={{
-              fontFamily: 'var(--rych-font-sans)',
-              fontSize: '13px',
-              color: 'var(--rych-ash)',
-              letterSpacing: '0.04em',
-              marginTop: '16px',
-              marginBottom: '32px',
+              fontFamily: "var(--stitch-font-sans)",
+              fontSize: "13px",
+              color: "var(--stitch-ash)",
+              letterSpacing: "0.04em",
+              marginTop: "16px",
+              marginBottom: "32px",
             }}
           >
             This page doesn&apos;t exist.
           </p>
 
-          <div style={{ display: 'flex', gap: '32px' }}>
+          <div style={{ display: "flex", gap: "32px" }}>
             <Link
               href="/shop"
               style={{
-                fontFamily: 'var(--rych-font-sans)',
-                fontSize: '10px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.14em',
-                color: 'var(--rych-ash)',
-                textDecoration: 'none',
-                transition: 'color 200ms',
+                fontFamily: "var(--stitch-font-sans)",
+                fontSize: "10px",
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                color: "var(--stitch-ash)",
+                textDecoration: "none",
+                transition: "color 200ms",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--rych-parchment)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--rych-ash)'; }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--stitch-parchment)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--stitch-ash)";
+              }}
             >
               BACK TO SHOP
             </Link>
             <Link
               href="/"
               style={{
-                fontFamily: 'var(--rych-font-sans)',
-                fontSize: '10px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.14em',
-                color: 'var(--rych-ash)',
-                textDecoration: 'none',
-                transition: 'color 200ms',
+                fontFamily: "var(--stitch-font-sans)",
+                fontSize: "10px",
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                color: "var(--stitch-ash)",
+                textDecoration: "none",
+                transition: "color 200ms",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--rych-parchment)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--rych-ash)'; }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--stitch-parchment)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--stitch-ash)";
+              }}
             >
               HOME
             </Link>

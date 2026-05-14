@@ -120,7 +120,7 @@ export default function ProductScrollSection({
                   scrollSnapAlign: "start",
                   height: "100vh",
                   width: "100%",
-                  backgroundColor: "var(--rych-surface)",
+                  backgroundColor: "var(--stitch-surface)",
                 }}
               />
             ))
@@ -155,19 +155,19 @@ export default function ProductScrollSection({
             style={{
               fontSize: "10px",
               letterSpacing: "0.1em",
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
             }}
           >
             {String(activeSlide + 1).padStart(2, "0")}
           </span>
-          <span style={{ fontSize: "8px", color: "var(--rych-border2)" }}>
+          <span style={{ fontSize: "8px", color: "var(--stitch-border2)" }}>
             /
           </span>
           <span
             style={{
               fontSize: "10px",
               letterSpacing: "0.1em",
-              color: "var(--rych-smoke)",
+              color: "var(--stitch-smoke)",
             }}
           >
             {String(total).padStart(2, "0")}
@@ -272,7 +272,7 @@ function ProductSlide({
         alignItems: "center",
         justifyContent: "center",
         padding: "48px",
-        backgroundColor: "var(--rych-bg)",
+        backgroundColor: "var(--stitch-bg)",
       }}
     >
       <motion.div
@@ -287,7 +287,7 @@ function ProductSlide({
           style={{
             fontSize: "10px",
             letterSpacing: "0.14em",
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
             textTransform: "uppercase",
             marginBottom: "12px",
           }}
@@ -299,10 +299,10 @@ function ProductSlide({
         <motion.h2
           variants={textItem}
           style={{
-            fontFamily: "var(--rych-font-display)",
+            fontFamily: "var(--stitch-font-display)",
             fontSize: "clamp(28px, 4vw, 52px)",
             fontWeight: 300,
-            color: "var(--rych-parchment)",
+            color: "var(--stitch-parchment)",
             lineHeight: 1.1,
             marginBottom: "16px",
           }}
@@ -324,7 +324,7 @@ function ProductSlide({
             style={{
               fontSize: "14px",
               letterSpacing: "0.06em",
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
             }}
           >
             {formatNPR(product.sellingPrice)}
@@ -334,7 +334,7 @@ function ProductSlide({
               <span
                 style={{
                   fontSize: "12px",
-                  color: "var(--rych-smoke)",
+                  color: "var(--stitch-smoke)",
                   textDecoration: "line-through",
                 }}
               >
@@ -360,11 +360,13 @@ function ProductSlide({
               style={{
                 width: "32px",
                 height: "32px",
-                border: "0.5px solid var(--rych-border2)",
+                border: "0.5px solid var(--stitch-border2)",
                 fontSize: "10px",
                 background: "transparent",
                 color:
-                  v.stock === 0 ? "var(--rych-smoke)" : "var(--rych-parchment)",
+                  v.stock === 0
+                    ? "var(--stitch-smoke)"
+                    : "var(--stitch-parchment)",
                 cursor: v.stock === 0 ? "not-allowed" : "pointer",
                 letterSpacing: "0.04em",
               }}
@@ -385,16 +387,17 @@ function ProductSlide({
             style={{
               fontSize: "11px",
               letterSpacing: "0.12em",
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
               textDecoration: "none",
               transition: "color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)",
             }}
             onMouseEnter={(e) =>
               ((e.target as HTMLAnchorElement).style.color =
-                "var(--rych-parchment)")
+                "var(--stitch-parchment)")
             }
             onMouseLeave={(e) =>
-              ((e.target as HTMLAnchorElement).style.color = "var(--rych-ash)")
+              ((e.target as HTMLAnchorElement).style.color =
+                "var(--stitch-ash)")
             }
           >
             VIEW PRODUCT →
@@ -415,8 +418,8 @@ function ProductSlide({
               }
               style={{
                 alignSelf: "flex-start",
-                backgroundColor: "var(--rych-linen)",
-                color: "var(--rych-bg)",
+                backgroundColor: "var(--stitch-linen)",
+                color: "var(--stitch-bg)",
                 fontSize: "10px",
                 letterSpacing: "0.16em",
                 padding: "12px 24px",

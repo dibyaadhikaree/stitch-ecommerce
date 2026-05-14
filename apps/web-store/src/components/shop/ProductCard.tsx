@@ -13,7 +13,12 @@ export type ProductCardData = {
   sellingPrice: number;
   marketPrice?: number;
   category: { name: string; slug: string };
-  media: { url: string; isPrimary: boolean; tag?: string; sortOrder?: number }[];
+  media: {
+    url: string;
+    isPrimary: boolean;
+    tag?: string;
+    sortOrder?: number;
+  }[];
   variants: { _id: string; size: string; stock: number }[];
 };
 
@@ -164,12 +169,12 @@ export function ProductCard({
                   position: "absolute",
                   top: 8,
                   left: 8,
-                  fontFamily: "var(--rych-font-sans)",
+                  fontFamily: "var(--stitch-font-sans)",
                   fontSize: 9,
                   letterSpacing: "0.12em",
-                  backgroundColor: "var(--rych-bg)",
+                  backgroundColor: "var(--stitch-bg)",
                   opacity: 0.85,
-                  color: "var(--rych-ash)",
+                  color: "var(--stitch-ash)",
                   padding: "3px 7px",
                 }}
               >
@@ -189,7 +194,7 @@ export function ProductCard({
                 style={{
                   fontSize: 12,
                   fontWeight: 300,
-                  color: "var(--rych-parchment)",
+                  color: "var(--stitch-parchment)",
                   lineHeight: 1.4,
                   overflow: "hidden",
                   textOverflow: "ellipsis",
@@ -211,7 +216,9 @@ export function ProductCard({
                 <span
                   style={{
                     fontSize: 12,
-                    color: isOnSale ? "var(--rych-parchment)" : "var(--rych-ash)",
+                    color: isOnSale
+                      ? "var(--stitch-parchment)"
+                      : "var(--stitch-ash)",
                   }}
                 >
                   {formatNPR(product.sellingPrice)}
@@ -220,7 +227,7 @@ export function ProductCard({
                   <span
                     style={{
                       fontSize: 10,
-                      color: "var(--rych-smoke)",
+                      color: "var(--stitch-smoke)",
                       textDecoration: "line-through",
                     }}
                   >
@@ -235,7 +242,7 @@ export function ProductCard({
               style={{
                 display: "block",
                 fontSize: 9,
-                color: "var(--rych-smoke)",
+                color: "var(--stitch-smoke)",
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
                 marginTop: 4,

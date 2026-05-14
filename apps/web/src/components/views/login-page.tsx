@@ -94,7 +94,7 @@ export function LoginPage() {
                 onChange={(e) =>
                   setForm((c) => ({ ...c, email: e.target.value }))
                 }
-                placeholder="admin@rychstudio.com"
+                placeholder="admin@stitchstudio.com"
               />
             </FormField>
             <FormField label="Password">

@@ -1,88 +1,97 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useQuery } from '@tanstack/react-query'
-import { getProducts } from '@/lib/api'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
-import { formatNPR } from '@/lib/utils'
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "@/lib/api";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { formatNPR } from "@/lib/utils";
 
 type Props = {
-  isOpen: boolean
-  onClose: () => void
-}
+  isOpen: boolean;
+  onClose: () => void;
+};
 
 export default function SearchOverlay({ isOpen, onClose }: Props) {
-  const reduced = useReducedMotion()
-  const dur = (base: number) => (reduced ? 0 : base)
+  const reduced = useReducedMotion();
+  const dur = (base: number) => (reduced ? 0 : base);
 
-  const [query, setQuery] = useState('')
-  const [debouncedQuery, setDebouncedQuery] = useState('')
-  const inputRef = useRef<HTMLInputElement>(null)
-  const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [query, setQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (isOpen) {
-      const id = setTimeout(() => inputRef.current?.focus(), 50)
-      return () => clearTimeout(id)
+      const id = setTimeout(() => inputRef.current?.focus(), 50);
+      return () => clearTimeout(id);
     } else {
-      setQuery('')
-      setDebouncedQuery('')
+      setQuery("");
+      setDebouncedQuery("");
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   useEffect(() => {
-    if (!isOpen) return
+    if (!isOpen) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
-    }
-    document.addEventListener('keydown', handler)
-    return () => document.removeEventListener('keydown', handler)
-  }, [isOpen, onClose])
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [isOpen, onClose]);
 
-  useEffect(() => () => {
-    if (debounceTimer.current) clearTimeout(debounceTimer.current)
-  }, [])
+  useEffect(
+    () => () => {
+      if (debounceTimer.current) clearTimeout(debounceTimer.current);
+    },
+    [],
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value
-    setQuery(val)
-    if (debounceTimer.current) clearTimeout(debounceTimer.current)
-    debounceTimer.current = setTimeout(() => setDebouncedQuery(val), 350)
-  }
+    const val = e.target.value;
+    setQuery(val);
+    if (debounceTimer.current) clearTimeout(debounceTimer.current);
+    debounceTimer.current = setTimeout(() => setDebouncedQuery(val), 350);
+  };
 
   const { data, isLoading } = useQuery({
-    queryKey: ['search', debouncedQuery],
+    queryKey: ["search", debouncedQuery],
     queryFn: () => getProducts({ search: debouncedQuery }),
     enabled: debouncedQuery.trim().length >= 2,
-  })
+  });
 
-  const results = (data?.products ?? []).slice(0, 8)
-  const showResults = debouncedQuery.trim().length >= 2
+  const results = (data?.products ?? []).slice(0, 8);
+  const showResults = debouncedQuery.trim().length >= 2;
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: dur(0.25), ease: [0.25, 0.1, 0.25, 1] } }}
-          exit={{ opacity: 0, transition: { duration: dur(0.2), ease: [0.25, 0.1, 0.25, 1] } }}
+          animate={{
+            opacity: 1,
+            transition: { duration: dur(0.25), ease: [0.25, 0.1, 0.25, 1] },
+          }}
+          exit={{
+            opacity: 0,
+            transition: { duration: dur(0.2), ease: [0.25, 0.1, 0.25, 1] },
+          }}
           className="fixed inset-0 z-[70] flex flex-col px-6 md:px-10"
-          style={{ background: 'rgba(17,17,17,0.97)' }}
+          style={{ background: "rgba(17,17,17,0.97)" }}
         >
           {/* Header */}
           <div
             className="h-[60px] flex items-center justify-between flex-shrink-0"
-            style={{ borderBottom: '0.5px solid var(--rych-border)' }}
+            style={{ borderBottom: "0.5px solid var(--stitch-border)" }}
           >
             <span
               className="font-display"
               style={{
-                fontSize:      11,
-                textTransform: 'uppercase',
-                color:         'var(--rych-ash)',
-                letterSpacing: '0.16em',
+                fontSize: 11,
+                textTransform: "uppercase",
+                color: "var(--stitch-ash)",
+                letterSpacing: "0.16em",
               }}
             >
               SEARCH
@@ -91,12 +100,12 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
               onClick={onClose}
               aria-label="Close search"
               style={{
-                fontSize:   24,
-                color:      'var(--rych-parchment)',
-                background: 'none',
-                border:     'none',
-                cursor:     'pointer',
-                padding:    0,
+                fontSize: 24,
+                color: "var(--stitch-parchment)",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
                 lineHeight: 1,
               }}
             >
@@ -107,7 +116,7 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
           {/* Input */}
           <div
             className="mt-8 flex-shrink-0"
-            style={{ borderBottom: '0.5px solid var(--rych-border2)' }}
+            style={{ borderBottom: "0.5px solid var(--stitch-border2)" }}
           >
             <input
               ref={inputRef}
@@ -117,9 +126,9 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
               placeholder="Search products…"
               className="w-full bg-transparent border-none outline-none font-display placeholder:text-smoke"
               style={{
-                fontSize:      'clamp(24px, 4vw, 40px)',
-                fontWeight:    300,
-                color:         'var(--rych-parchment)',
+                fontSize: "clamp(24px, 4vw, 40px)",
+                fontWeight: 300,
+                color: "var(--stitch-parchment)",
                 paddingBottom: 12,
               }}
             />
@@ -138,16 +147,22 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
             {showResults && !isLoading && results.length === 0 && (
               <p
                 className="text-center"
-                style={{ fontSize: 13, color: 'var(--rych-ash)' }}
+                style={{ fontSize: 13, color: "var(--stitch-ash)" }}
               >
                 No products found for &ldquo;{debouncedQuery}&rdquo;
               </p>
             )}
 
             {showResults && !isLoading && results.length > 0 && (
-              <motion.div key={debouncedQuery} initial="hidden" animate="visible" className="flex flex-col">
+              <motion.div
+                key={debouncedQuery}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col"
+              >
                 {results.map((product, i) => {
-                  const primaryMedia = product.media.find(m => m.isPrimary) ?? product.media[0]
+                  const primaryMedia =
+                    product.media.find((m) => m.isPrimary) ?? product.media[0];
                   return (
                     <motion.div
                       key={product._id}
@@ -159,8 +174,8 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
                           y: 0,
                           transition: {
                             duration: dur(0.2),
-                            delay:    reduced ? 0 : idx * 0.03,
-                            ease:     [0.25, 0.1, 0.25, 1],
+                            delay: reduced ? 0 : idx * 0.03,
+                            ease: [0.25, 0.1, 0.25, 1],
                           },
                         }),
                       }}
@@ -169,7 +184,9 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
                         href={`/shop/${product.slug}`}
                         onClick={onClose}
                         className="flex items-center gap-4 py-3 hover:bg-surface transition-colors duration-200"
-                        style={{ borderBottom: '0.5px solid var(--rych-border)' }}
+                        style={{
+                          borderBottom: "0.5px solid var(--stitch-border)",
+                        }}
                       >
                         <div
                           className="flex-shrink-0 bg-lift overflow-hidden"
@@ -179,7 +196,11 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
                             <img
                               src={primaryMedia.url}
                               alt={product.name}
-                              style={{ width: 48, height: 48, objectFit: 'cover' }}
+                              style={{
+                                width: 48,
+                                height: 48,
+                                objectFit: "cover",
+                              }}
                             />
                           ) : (
                             <div style={{ width: 48, height: 48 }} />
@@ -188,23 +209,26 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
                         <div className="flex flex-col gap-0.5 min-w-0">
                           <span
                             className="font-sans truncate"
-                            style={{ fontSize: 13, color: 'var(--rych-parchment)' }}
+                            style={{
+                              fontSize: 13,
+                              color: "var(--stitch-parchment)",
+                            }}
                           >
                             {product.name}
                           </span>
                           <span
                             className="font-sans"
-                            style={{ fontSize: 12, color: 'var(--rych-ash)' }}
+                            style={{ fontSize: 12, color: "var(--stitch-ash)" }}
                           >
                             {formatNPR(product.sellingPrice)}
                           </span>
                           <span
                             className="font-sans"
                             style={{
-                              fontSize:      10,
-                              color:         'var(--rych-smoke)',
-                              textTransform: 'uppercase',
-                              letterSpacing: '0.08em',
+                              fontSize: 10,
+                              color: "var(--stitch-smoke)",
+                              textTransform: "uppercase",
+                              letterSpacing: "0.08em",
                             }}
                           >
                             {product.category.name}
@@ -212,7 +236,7 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
                         </div>
                       </Link>
                     </motion.div>
-                  )
+                  );
                 })}
               </motion.div>
             )}
@@ -220,5 +244,5 @@ export default function SearchOverlay({ isOpen, onClose }: Props) {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

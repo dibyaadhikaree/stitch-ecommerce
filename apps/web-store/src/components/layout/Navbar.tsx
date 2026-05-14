@@ -64,7 +64,7 @@ export default function Navbar() {
     if (
       announcement?.isActive === true &&
       announcement?.text &&
-      !sessionStorage.getItem("rych-bar-dismissed")
+      !sessionStorage.getItem("stitch-bar-dismissed")
     ) {
       setShowBar(true);
     }
@@ -81,13 +81,13 @@ export default function Navbar() {
 
   useEffect(() => {
     document.documentElement.style.setProperty(
-      "--rych-navbar-offset",
+      "--stitch-navbar-offset",
       hidden ? "0px" : "60px",
     );
 
     return () => {
       document.documentElement.style.setProperty(
-        "--rych-navbar-offset",
+        "--stitch-navbar-offset",
         "60px",
       );
     };
@@ -109,7 +109,7 @@ export default function Navbar() {
   }, [pathname]);
 
   const dismissBar = () => {
-    sessionStorage.setItem("rych-bar-dismissed", "1");
+    sessionStorage.setItem("stitch-bar-dismissed", "1");
     setShowBar(false);
   };
 
@@ -144,14 +144,14 @@ export default function Navbar() {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="relative flex items-center justify-center px-8 overflow-hidden"
-              style={{ background: "var(--rych-surface)" }}
+              style={{ background: "var(--stitch-surface)" }}
             >
               <span
                 style={{
                   fontSize: 12,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "var(--rych-ash)",
+                  color: "var(--stitch-ash)",
                 }}
               >
                 {announcement?.link ? (
@@ -183,7 +183,7 @@ export default function Navbar() {
             background: "rgba(17,17,17,0.95)",
             backdropFilter: "blur(8px)",
             WebkitBackdropFilter: "blur(8px)",
-            borderBottom: "0.5px solid var(--rych-border)",
+            borderBottom: "0.5px solid var(--stitch-border)",
           }}
         >
           {/* Logo */}
@@ -193,7 +193,7 @@ export default function Navbar() {
             style={{
               fontSize: 18,
               letterSpacing: "0.18em",
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
             }}
           >
             STITCH
@@ -237,11 +237,11 @@ export default function Navbar() {
                   position: "absolute",
                   width: 18,
                   height: 1,
-                  background: "var(--rych-parchment)",
+                  background: "var(--stitch-parchment)",
                   transform: isMenuOpen
                     ? "translateY(0px) rotate(45deg)"
                     : "translateY(-4px)",
-                  transition: "transform 200ms var(--rych-ease)",
+                  transition: "transform 200ms var(--stitch-ease)",
                 }}
               />
               <span
@@ -249,11 +249,11 @@ export default function Navbar() {
                   position: "absolute",
                   width: 18,
                   height: 1,
-                  background: "var(--rych-parchment)",
+                  background: "var(--stitch-parchment)",
                   transform: isMenuOpen
                     ? "translateY(0px) rotate(-45deg)"
                     : "translateY(4px)",
-                  transition: "transform 200ms var(--rych-ease)",
+                  transition: "transform 200ms var(--stitch-ease)",
                 }}
               />
             </button>
@@ -268,8 +268,8 @@ export default function Navbar() {
                 <span
                   className="absolute -top-[6px] -right-[6px] w-4 h-4 rounded-full flex items-center justify-center"
                   style={{
-                    background: "var(--rych-parchment)",
-                    color: "var(--rych-bg)",
+                    background: "var(--stitch-parchment)",
+                    color: "var(--stitch-bg)",
                     fontSize: 11,
                     fontWeight: 600,
                   }}
@@ -291,10 +291,10 @@ export default function Navbar() {
               transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute left-0 right-0"
               style={{
-                background: "var(--rych-surface)",
-                borderLeft: "0.5px solid var(--rych-border)",
-                borderRight: "0.5px solid var(--rych-border)",
-                borderBottom: "0.5px solid var(--rych-border)",
+                background: "var(--stitch-surface)",
+                borderLeft: "0.5px solid var(--stitch-border)",
+                borderRight: "0.5px solid var(--stitch-border)",
+                borderBottom: "0.5px solid var(--stitch-border)",
               }}
             >
               <div className="px-10 py-6">
@@ -362,14 +362,14 @@ export default function Navbar() {
               left: 0,
               width: "100vw",
               height: "100dvh",
-              background: "var(--rych-bg)",
+              background: "var(--stitch-bg)",
               zIndex: 60,
             }}
           >
             {/* Top row */}
             <div
               className="h-[60px] flex items-center justify-between px-6 flex-shrink-0"
-              style={{ borderBottom: "0.5px solid var(--rych-border)" }}
+              style={{ borderBottom: "0.5px solid var(--stitch-border)" }}
             >
               <Link
                 href="/"
@@ -378,7 +378,7 @@ export default function Navbar() {
                 style={{
                   fontSize: 18,
                   letterSpacing: "0.18em",
-                  color: "var(--rych-parchment)",
+                  color: "var(--stitch-parchment)",
                 }}
               >
                 STITCH
@@ -411,7 +411,7 @@ export default function Navbar() {
                     style={{
                       fontSize: "clamp(32px, 8vw, 48px)",
                       fontWeight: 300,
-                      color: "var(--rych-parchment)",
+                      color: "var(--stitch-parchment)",
                       letterSpacing: "-0.01em",
                       textDecoration: "none",
                       background: "none",
@@ -435,7 +435,7 @@ export default function Navbar() {
                   fontSize: 11,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "var(--rych-ash)",
+                  color: "var(--stitch-ash)",
                   textDecoration: "none",
                 }}
               >
@@ -448,7 +448,7 @@ export default function Navbar() {
                   fontSize: 11,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "var(--rych-ash)",
+                  color: "var(--stitch-ash)",
                   textDecoration: "none",
                 }}
               >
@@ -474,7 +474,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
         fontSize: 13,
         letterSpacing: "0.12em",
         textTransform: "uppercase",
-        color: hovered ? "var(--rych-parchment)" : "var(--rych-ash)",
+        color: hovered ? "var(--stitch-parchment)" : "var(--stitch-ash)",
         transition: "color 0.2s ease",
       }}
       onMouseEnter={() => setHovered(true)}
@@ -483,7 +483,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
       {label}
       <motion.span
         className="absolute left-0 bottom-[-2px] h-px w-full block origin-left"
-        style={{ background: "var(--rych-parchment)" }}
+        style={{ background: "var(--stitch-parchment)" }}
         animate={{ scaleX: hovered ? 1 : 0 }}
         transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
       />
@@ -511,7 +511,7 @@ function CategoryTile({
       onClick={onClick}
       className="block p-4 transition-colors duration-200"
       style={{
-        background: hovered ? "var(--rych-border)" : "var(--rych-lift)",
+        background: hovered ? "var(--stitch-border)" : "var(--stitch-lift)",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -522,7 +522,7 @@ function CategoryTile({
           fontSize: 13,
           letterSpacing: "0.12em",
           textTransform: "uppercase",
-          color: muted ? "var(--rych-ash)" : "var(--rych-parchment)",
+          color: muted ? "var(--stitch-ash)" : "var(--stitch-parchment)",
         }}
       >
         {label}
@@ -530,7 +530,7 @@ function CategoryTile({
       {count > 0 && (
         <span
           className="block mt-1"
-          style={{ fontSize: 12, color: "var(--rych-smoke)" }}
+          style={{ fontSize: 12, color: "var(--stitch-smoke)" }}
         >
           {count} items
         </span>

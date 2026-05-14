@@ -7,7 +7,12 @@ import { cn } from "@/lib/utils";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type Props = {
-  media: { url: string; isPrimary: boolean; tag?: string; sortOrder?: number }[];
+  media: {
+    url: string;
+    isPrimary: boolean;
+    tag?: string;
+    sortOrder?: number;
+  }[];
   productName: string;
 };
 
@@ -182,8 +187,8 @@ export default function ImageSlider({ media, productName }: Props) {
                 height: 36,
                 opacity: active ? 1 : 0.4,
                 border: active
-                  ? "0.5px solid var(--rych-ash)"
-                  : "0.5px solid var(--rych-border)",
+                  ? "0.5px solid var(--stitch-ash)"
+                  : "0.5px solid var(--stitch-border)",
                 transition: reduced
                   ? "none"
                   : "opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)",

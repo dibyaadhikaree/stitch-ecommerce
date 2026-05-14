@@ -87,8 +87,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "var(--rych-surface)",
-        borderTop: "0.5px solid var(--rych-border)",
+        background: "var(--stitch-surface)",
+        borderTop: "0.5px solid var(--stitch-border)",
       }}
     >
       <div className="px-6 md:px-10 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -103,9 +103,9 @@ export default function Footer() {
         <div
           style={{
             textAlign: "center",
-            fontFamily: "var(--rych-font-sans)",
+            fontFamily: "var(--stitch-font-sans)",
             fontSize: 11,
-            color: "var(--rych-smoke)",
+            color: "var(--stitch-smoke)",
             letterSpacing: "0.08em",
             paddingBottom: 16,
           }}
@@ -117,7 +117,7 @@ export default function Footer() {
       {/* Bottom strip */}
       <div
         className="px-6 md:px-10 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2"
-        style={{ borderTop: "0.5px solid var(--rych-border)" }}
+        style={{ borderTop: "0.5px solid var(--stitch-border)" }}
       >
         <span
           className="text-ash"

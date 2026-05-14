@@ -104,7 +104,7 @@ export default function PurchasePanel({
           style={{
             fontSize: 12,
             letterSpacing: "0.1em",
-            color: "var(--rych-smoke)",
+            color: "var(--stitch-smoke)",
             textTransform: "uppercase",
             marginBottom: 10,
           }}
@@ -124,7 +124,7 @@ export default function PurchasePanel({
             style={{
               fontSize: 22,
               fontWeight: 300,
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
               letterSpacing: "0.04em",
             }}
           >
@@ -135,7 +135,7 @@ export default function PurchasePanel({
               className={cn("font-sans")}
               style={{
                 fontSize: 15,
-                color: "var(--rych-smoke)",
+                color: "var(--stitch-smoke)",
                 textDecoration: "line-through",
                 marginLeft: 10,
               }}
@@ -146,12 +146,12 @@ export default function PurchasePanel({
           {isOnSale && (
             <div
               style={{
-                fontFamily: "var(--rych-font-sans)",
+                fontFamily: "var(--stitch-font-sans)",
                 fontSize: 10,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "var(--rych-ash)",
-                border: "0.5px solid var(--rych-border)",
+                color: "var(--stitch-ash)",
+                border: "0.5px solid var(--stitch-border)",
                 padding: "2px 7px",
                 marginLeft: 8,
                 whiteSpace: "nowrap",
@@ -168,7 +168,7 @@ export default function PurchasePanel({
         animate={mounted ? { opacity: 1, scaleX: 1 } : undefined}
         transition={{ duration: duration(0.5), delay: 0.35, ease: EASE }}
         style={{
-          borderTop: "0.5px solid var(--rych-border)",
+          borderTop: "0.5px solid var(--stitch-border)",
           margin: "0 0 22px",
           transformOrigin: "left",
         }}
@@ -181,7 +181,7 @@ export default function PurchasePanel({
         style={{
           fontSize: 12,
           letterSpacing: "0.12em",
-          color: "var(--rych-ash)",
+          color: "var(--stitch-ash)",
           textTransform: "uppercase",
           marginBottom: 10,
         }}
@@ -218,11 +218,11 @@ export default function PurchasePanel({
                 letterSpacing: "0.06em",
                 background: "transparent",
                 border: selectedState
-                  ? "0.5px solid var(--rych-ash)"
-                  : "0.5px solid var(--rych-border)",
+                  ? "0.5px solid var(--stitch-ash)"
+                  : "0.5px solid var(--stitch-border)",
                 color: selectedState
-                  ? "var(--rych-parchment)"
-                  : "var(--rych-ash)",
+                  ? "var(--stitch-parchment)"
+                  : "var(--stitch-ash)",
                 opacity: 1,
                 cursor: outOfStock ? "default" : "pointer",
                 pointerEvents: outOfStock ? "none" : "auto",
@@ -232,16 +232,16 @@ export default function PurchasePanel({
               }}
               onMouseEnter={(event) => {
                 if (outOfStock || selectedState) return;
-                event.currentTarget.style.borderColor = "var(--rych-ash)";
+                event.currentTarget.style.borderColor = "var(--stitch-ash)";
               }}
               onMouseLeave={(event) => {
                 if (outOfStock || selectedState) return;
-                event.currentTarget.style.borderColor = "var(--rych-border)";
+                event.currentTarget.style.borderColor = "var(--stitch-border)";
               }}
             >
               <span
                 style={{
-                  color: outOfStock ? "var(--rych-border2)" : undefined,
+                  color: outOfStock ? "var(--stitch-border2)" : undefined,
                 }}
               >
                 {variant.size}
@@ -255,7 +255,7 @@ export default function PurchasePanel({
                     left: 0,
                     width: "100%",
                     height: "0.5px",
-                    backgroundColor: "var(--rych-border2)",
+                    backgroundColor: "var(--stitch-border2)",
                     transform: "rotate(-25deg)",
                   }}
                 />
@@ -275,13 +275,13 @@ export default function PurchasePanel({
               exit={{ opacity: 0 }}
               transition={{ duration: duration(0.3), ease: EASE }}
               style={{
-                fontFamily: "var(--rych-font-sans)",
+                fontFamily: "var(--stitch-font-sans)",
                 fontSize: 12,
                 letterSpacing: "0.04em",
                 color:
                   selected?.stock === 0
-                    ? "var(--rych-smoke)"
-                    : "var(--rych-ash)",
+                    ? "var(--stitch-smoke)"
+                    : "var(--stitch-ash)",
                 marginBottom: 20,
               }}
             >
@@ -303,7 +303,7 @@ export default function PurchasePanel({
         disabled={!selected || selected.stock < 1}
         style={{
           padding: "15px 0",
-          backgroundColor: "var(--rych-linen)",
+          backgroundColor: "var(--stitch-linen)",
           color: "#111111",
           fontSize: 12,
           letterSpacing: "0.16em",
@@ -331,7 +331,7 @@ export default function PurchasePanel({
         style={{
           fontSize: 12,
           letterSpacing: "0.06em",
-          color: "var(--rych-smoke)",
+          color: "var(--stitch-smoke)",
           lineHeight: 1.8,
           marginTop: 16,
         }}

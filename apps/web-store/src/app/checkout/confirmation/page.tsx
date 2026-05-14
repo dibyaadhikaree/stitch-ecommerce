@@ -18,12 +18,12 @@ export default function ConfirmationPage() {
   useEffect(() => {
     if (didRead.current) return;
     didRead.current = true;
-    const stored = sessionStorage.getItem("rych-order-number");
+    const stored = sessionStorage.getItem("stitch-order-number");
     if (!stored) {
       router.replace("/");
       return;
     }
-    sessionStorage.removeItem("rych-order-number");
+    sessionStorage.removeItem("stitch-order-number");
     setOrderNumber(stored);
   }, []);
 
@@ -36,7 +36,7 @@ export default function ConfirmationPage() {
       onClick={() => setRevealed(true)}
       style={{
         minHeight: "100vh",
-        background: "var(--rych-bg)",
+        background: "var(--stitch-bg)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -64,7 +64,7 @@ export default function ConfirmationPage() {
             fontSize: 11,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
           }}
         >
           Order placed
@@ -77,10 +77,10 @@ export default function ConfirmationPage() {
             animate={{ clipPath: "inset(0% 0 0 0)" }}
             transition={{ duration: dur(0.8), delay: dur(0.2), ease: EASE }}
             style={{
-              fontFamily: "var(--rych-font-display)",
+              fontFamily: "var(--stitch-font-display)",
               fontSize: "clamp(32px, 5vw, 56px)",
               fontWeight: 300,
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
               lineHeight: 1.1,
               letterSpacing: "-0.015em",
               margin: 0,
@@ -103,7 +103,7 @@ export default function ConfirmationPage() {
                 fontSize: 10,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "var(--rych-smoke)",
+                color: "var(--stitch-smoke)",
                 userSelect: "none",
               }}
             >
@@ -131,9 +131,9 @@ export default function ConfirmationPage() {
                 style={{
                   fontSize: 13,
                   lineHeight: 1.6,
-                  color: "var(--rych-ash)",
+                  color: "var(--stitch-ash)",
                   margin: 0,
-                  fontFamily: "var(--rych-font-sans)",
+                  fontFamily: "var(--stitch-font-sans)",
                 }}
               >
                 We&apos;ll confirm your order and reach out on the number
@@ -148,7 +148,7 @@ export default function ConfirmationPage() {
                     fontSize: 11,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
-                    color: "var(--rych-parchment)",
+                    color: "var(--stitch-parchment)",
                     textDecoration: "none",
                   }}
                 >
@@ -161,7 +161,7 @@ export default function ConfirmationPage() {
                     fontSize: 11,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
-                    color: "var(--rych-parchment)",
+                    color: "var(--stitch-parchment)",
                     textDecoration: "none",
                   }}
                 >

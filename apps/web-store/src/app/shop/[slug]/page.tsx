@@ -67,8 +67,8 @@ export default async function ProductPage({
   return (
     <main
       style={{
-        backgroundColor: "var(--rych-bg)",
-        color: "var(--rych-parchment)",
+        backgroundColor: "var(--stitch-bg)",
+        color: "var(--stitch-parchment)",
         paddingTop: "60px",
       }}
     >
@@ -93,7 +93,7 @@ export default async function ProductPage({
 
           .pdp-col-right {
             border-left: none !important;
-            border-top: 0.5px solid var(--rych-border);
+            border-top: 0.5px solid var(--stitch-border);
             padding: 32px 24px !important;
           }
 
@@ -109,9 +109,9 @@ export default async function ProductPage({
           gridTemplateColumns: "1fr 2fr 1fr",
           minHeight: "calc(100vh - 60px)",
           width: "100%",
-          background: "var(--rych-bg)",
+          background: "var(--stitch-bg)",
           position: "relative",
-          borderBottom: "0.5px solid var(--rych-border)",
+          borderBottom: "0.5px solid var(--stitch-border)",
         }}
       >
         <div
@@ -120,7 +120,7 @@ export default async function ProductPage({
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            borderRight: "0.5px solid var(--rych-border)",
+            borderRight: "0.5px solid var(--stitch-border)",
             padding: "96px 32px 48px 40px",
           }}
         >
@@ -169,7 +169,7 @@ export default async function ProductPage({
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            borderLeft: "0.5px solid var(--rych-border)",
+            borderLeft: "0.5px solid var(--stitch-border)",
             padding: "96px 40px 48px 32px",
           }}
         >
@@ -189,7 +189,7 @@ export default async function ProductPage({
       <section
         className="pdp-below-fold"
         style={{
-          borderTop: "0.5px solid var(--rych-border)",
+          borderTop: "0.5px solid var(--stitch-border)",
           padding: "60px 40px",
           width: "100%",
         }}
@@ -204,7 +204,7 @@ export default async function ProductPage({
               style={{
                 fontSize: 10,
                 letterSpacing: "0.04em",
-                color: "var(--rych-ash)",
+                color: "var(--stitch-ash)",
                 lineHeight: 1.9,
               }}
             >
@@ -216,10 +216,10 @@ export default async function ProductPage({
           <Accordion title="Shipping & Returns">
             <pre
               style={{
-                fontFamily: "var(--rych-font-sans)",
+                fontFamily: "var(--stitch-font-sans)",
                 fontSize: 10,
                 letterSpacing: "0.04em",
-                color: "var(--rych-ash)",
+                color: "var(--stitch-ash)",
                 lineHeight: 1.9,
                 whiteSpace: "pre-line",
                 margin: 0,
@@ -233,10 +233,10 @@ export default async function ProductPage({
           <Accordion title="Size Guide">
             <pre
               style={{
-                fontFamily: "var(--rych-font-sans)",
+                fontFamily: "var(--stitch-font-sans)",
                 fontSize: 12,
                 lineHeight: 1.9,
-                color: "var(--rych-ash)",
+                color: "var(--stitch-ash)",
                 whiteSpace: "pre-line",
                 margin: 0,
               }}

@@ -303,7 +303,7 @@ export function SettingsView({ token }: { token: string }) {
                     instagramHandle: e.target.value,
                   }))
                 }
-                placeholder="@rychstudio"
+                placeholder="@stitchstudio"
               />
             </FormField>
             <FormField label="TikTok handle">
@@ -315,7 +315,7 @@ export function SettingsView({ token }: { token: string }) {
                     tiktokHandle: e.target.value,
                   }))
                 }
-                placeholder="@rychstudio"
+                placeholder="@stitchstudio"
               />
             </FormField>
             <FormField label="WhatsApp number">

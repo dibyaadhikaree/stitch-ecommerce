@@ -21,7 +21,7 @@ export default function AboutPage() {
   const aboutBody =
     settings?.aboutBody ?? "NEPAL'S AUTHENTIC AND PREMIUM BRAND";
   const aboutImageUrl = settings?.aboutImageUrl ?? "";
-  const instagramHandle = settings?.instagramHandle ?? "rychwears";
+  const instagramHandle = settings?.instagramHandle ?? "stitchwears";
   const tiktokHandle = settings?.tiktokHandle ?? "";
   const whatsappNumber = settings?.whatsappNumber ?? "";
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
   }
 
   return (
-    <main style={{ background: "var(--rych-bg)" }}>
+    <main style={{ background: "var(--stitch-bg)" }}>
       {/* Section 1 — Hero */}
       <section
         style={{ height: "100vh", position: "relative", overflow: "hidden" }}
@@ -71,7 +71,7 @@ export default function AboutPage() {
         {!aboutImageUrl && (
           <div
             style={{
-              backgroundColor: "var(--rych-lift)",
+              backgroundColor: "var(--stitch-lift)",
               width: "100%",
               height: "100%",
             }}
@@ -84,7 +84,7 @@ export default function AboutPage() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(to bottom, transparent 0%, var(--rych-bg) 40%)",
+              "linear-gradient(to bottom, transparent 0%, var(--stitch-bg) 40%)",
           }}
         />
 
@@ -107,9 +107,9 @@ export default function AboutPage() {
             transition={{ duration: duration(0.4) }}
             style={{
               fontSize: 10,
-              fontFamily: "var(--rych-font-sans)",
+              fontFamily: "var(--stitch-font-sans)",
               letterSpacing: "0.2em",
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
               textTransform: "uppercase",
               marginBottom: 24,
             }}
@@ -131,10 +131,10 @@ export default function AboutPage() {
                 ease: EASE,
               }}
               style={{
-                fontFamily: "var(--rych-font-display)",
+                fontFamily: "var(--stitch-font-display)",
                 fontWeight: 300,
                 fontSize: "clamp(40px, 6vw, 80px)",
-                color: "var(--rych-parchment)",
+                color: "var(--stitch-parchment)",
                 textAlign: "center",
                 maxWidth: 700,
                 lineHeight: 1.05,
@@ -165,10 +165,10 @@ export default function AboutPage() {
           }}
           viewport={{ amount: 0.3, once: true }}
           style={{
-            fontFamily: "var(--rych-font-sans)",
+            fontFamily: "var(--stitch-font-sans)",
             fontSize: 15,
             lineHeight: 1.9,
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
             whiteSpace: "pre-line",
           }}
         >
@@ -181,7 +181,7 @@ export default function AboutPage() {
         <section
           style={{
             width: "100%",
-            borderTop: "0.5px solid var(--rych-border)",
+            borderTop: "0.5px solid var(--stitch-border)",
             padding: "48px 24px",
           }}
         >
@@ -201,19 +201,19 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontFamily: "var(--rych-font-sans)",
+                  fontFamily: "var(--stitch-font-sans)",
                   fontSize: 11,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "var(--rych-ash)",
+                  color: "var(--stitch-ash)",
                   textDecoration: "none",
                   transition: "color 200ms ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = "var(--rych-parchment)";
+                  e.currentTarget.style.color = "var(--stitch-parchment)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = "var(--rych-ash)";
+                  e.currentTarget.style.color = "var(--stitch-ash)";
                 }}
               >
                 {link.label}

@@ -306,7 +306,7 @@ export default function HeroSection({
           style={{
             fontSize: "10px",
             letterSpacing: "0.2em",
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
             textTransform: "uppercase",
           }}
         >
@@ -324,10 +324,10 @@ export default function HeroSection({
             }
             transition={{ duration: dur(0.8), delay: dur(0.4), ease: EASE_STD }}
             style={{
-              fontFamily: "var(--rych-font-display)",
+              fontFamily: "var(--stitch-font-display)",
               fontSize: "clamp(40px, 6vw, 80px)",
               fontWeight: 300,
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
               lineHeight: 1.1,
             }}
           >
@@ -346,9 +346,9 @@ export default function HeroSection({
             style={{
               fontSize: "11px",
               letterSpacing: "0.14em",
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
               textDecoration: "none",
-              borderBottom: "1px solid var(--rych-parchment)",
+              borderBottom: "1px solid var(--stitch-parchment)",
               paddingBottom: "4px",
             }}
           >
@@ -375,7 +375,7 @@ export default function HeroSection({
             writingMode: "vertical-rl",
             fontSize: "9px",
             letterSpacing: "0.2em",
-            color: "var(--rych-smoke)",
+            color: "var(--stitch-smoke)",
             textTransform: "uppercase",
           }}
         >
@@ -388,7 +388,7 @@ export default function HeroSection({
             display: "block",
             width: "1px",
             height: "40px",
-            backgroundColor: "var(--rych-smoke)",
+            backgroundColor: "var(--stitch-smoke)",
             transformOrigin: "top",
           }}
         />

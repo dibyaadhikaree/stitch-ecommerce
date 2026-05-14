@@ -18,7 +18,11 @@ export default function ShopPage() {
   });
 
   const { data, isLoading, isFetching } = useQuery({
-    queryKey: ["products", { category: activeCategory === "all" ? undefined : activeCategory, sort }, page],
+    queryKey: [
+      "products",
+      { category: activeCategory === "all" ? undefined : activeCategory, sort },
+      page,
+    ],
     queryFn: () =>
       getProducts({
         category: activeCategory === "all" ? undefined : activeCategory,
@@ -54,7 +58,7 @@ export default function ShopPage() {
   const isEmpty = !isLoading && allProducts.length === 0;
 
   return (
-    <div style={{ minHeight: "100vh", background: "var(--rych-bg)" }}>
+    <div style={{ minHeight: "100vh", background: "var(--stitch-bg)" }}>
       {/* Page header */}
       <div style={{ padding: "80px 24px 0" }}>
         <span
@@ -62,7 +66,7 @@ export default function ShopPage() {
           style={{
             fontSize: 11,
             letterSpacing: "0.2em",
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
           }}
         >
           SHOP
@@ -120,7 +124,7 @@ export default function ShopPage() {
       {isEmpty && (
         <div
           className="flex flex-col items-center justify-center"
-          style={{ padding: "80px 24px", color: "var(--rych-ash)" }}
+          style={{ padding: "80px 24px", color: "var(--stitch-ash)" }}
         >
           <p
             style={{
@@ -141,8 +145,8 @@ export default function ShopPage() {
             onClick={() => setPage((p) => p + 1)}
             disabled={isFetching}
             style={{
-              border: "0.5px solid var(--rych-border2)",
-              color: isFetching ? "var(--rych-smoke)" : "var(--rych-ash)",
+              border: "0.5px solid var(--stitch-border2)",
+              color: isFetching ? "var(--stitch-smoke)" : "var(--stitch-ash)",
               background: "transparent",
               fontSize: 10,
               letterSpacing: "0.2em",
@@ -154,14 +158,14 @@ export default function ShopPage() {
             }}
             onMouseEnter={(e) => {
               if (!isFetching) {
-                e.currentTarget.style.borderColor = "var(--rych-parchment)";
-                e.currentTarget.style.color = "var(--rych-parchment)";
+                e.currentTarget.style.borderColor = "var(--stitch-parchment)";
+                e.currentTarget.style.color = "var(--stitch-parchment)";
               }
             }}
             onMouseLeave={(e) => {
               if (!isFetching) {
-                e.currentTarget.style.borderColor = "var(--rych-border2)";
-                e.currentTarget.style.color = "var(--rych-ash)";
+                e.currentTarget.style.borderColor = "var(--stitch-border2)";
+                e.currentTarget.style.color = "var(--stitch-ash)";
               }
             }}
           >

@@ -32,7 +32,7 @@ export default function CollectionsStrip() {
                 flex: "0 0 33.333333%",
                 position: "relative",
                 overflow: "hidden",
-                background: "var(--rych-lift)",
+                background: "var(--stitch-lift)",
               }}
             >
               {i < 2 && (
@@ -43,7 +43,7 @@ export default function CollectionsStrip() {
                     right: 0,
                     width: "1px",
                     height: "100%",
-                    backgroundColor: "var(--rych-border)",
+                    backgroundColor: "var(--stitch-border)",
                     zIndex: 1,
                   }}
                 />
@@ -109,7 +109,7 @@ function CollectionTile({
             inset: 0,
             background: collection.coverImage
               ? undefined
-              : "var(--rych-lift)",
+              : "var(--stitch-lift)",
             backgroundImage: collection.coverImage
               ? `linear-gradient(to top, rgba(13, 13, 13, 0.68), rgba(13, 13, 13, 0.18)), url('${collection.coverImage}')`
               : undefined,
@@ -128,7 +128,7 @@ function CollectionTile({
               right: 0,
               width: "1px",
               height: "100%",
-              backgroundColor: "var(--rych-border)",
+              backgroundColor: "var(--stitch-border)",
               zIndex: 1,
             }}
           />
@@ -150,10 +150,10 @@ function CollectionTile({
         >
           <span
             style={{
-              fontFamily: "var(--rych-font-display)",
+              fontFamily: "var(--stitch-font-display)",
               fontSize: "24px",
               fontWeight: 300,
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
             }}
           >
             {collection.name}
@@ -162,7 +162,7 @@ function CollectionTile({
             style={{
               fontSize: "10px",
               letterSpacing: "0.12em",
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
               marginTop: "6px",
               textTransform: "uppercase",
             }}

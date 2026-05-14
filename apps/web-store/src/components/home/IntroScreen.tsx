@@ -20,14 +20,14 @@ export default function IntroScreen({ onComplete }: Props) {
   useEffect(() => {
     setMounted(true);
 
-    if (sessionStorage.getItem("rych-intro-done")) {
+    if (sessionStorage.getItem("stitch-intro-done")) {
       setShow(false);
       onComplete();
       return;
     }
 
     if (reduced) {
-      sessionStorage.setItem("rych-intro-done", "1");
+      sessionStorage.setItem("stitch-intro-done", "1");
       setShow(false);
       onComplete();
       return;
@@ -39,7 +39,7 @@ export default function IntroScreen({ onComplete }: Props) {
     const t1 = setTimeout(() => setPhase(2), 800);
     const t2 = setTimeout(() => setPhase(3), 1800);
     const t3 = setTimeout(() => {
-      sessionStorage.setItem("rych-intro-done", "1");
+      sessionStorage.setItem("stitch-intro-done", "1");
       setShow(false);
       onComplete();
     }, 2800);
@@ -86,7 +86,7 @@ export default function IntroScreen({ onComplete }: Props) {
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        backgroundColor: "var(--rych-bg)",
+        backgroundColor: "var(--stitch-bg)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -99,11 +99,11 @@ export default function IntroScreen({ onComplete }: Props) {
         animate={textAnimate}
         transition={textTransition}
         style={{
-          fontFamily: "var(--rych-font-display)",
+          fontFamily: "var(--stitch-font-display)",
           fontSize: "clamp(56px, 10vw, 120px)",
           fontWeight: 300,
           letterSpacing: "0.22em",
-          color: "var(--rych-parchment)",
+          color: "var(--stitch-parchment)",
           lineHeight: 1,
         }}
       >
@@ -117,7 +117,7 @@ export default function IntroScreen({ onComplete }: Props) {
           display: "block",
           width: "60px",
           height: "1px",
-          backgroundColor: "var(--rych-border2)",
+          backgroundColor: "var(--stitch-border2)",
         }}
       />
     </motion.div>

@@ -35,12 +35,12 @@ export default function CategoryBar({
     <div
       className={cn("sticky z-30 flex items-center")}
       style={{
-        top: "var(--rych-navbar-offset, 60px)",
+        top: "var(--stitch-navbar-offset, 60px)",
         height: 48,
         padding: "0 24px",
         background: "rgba(17, 17, 17, 0.95)",
         backdropFilter: "blur(8px)",
-        borderBottom: "0.5px solid var(--rych-border)",
+        borderBottom: "0.5px solid var(--stitch-border)",
         gap: 16,
         transition: "top 0.25s cubic-bezier(0.25, 0.1, 0.25, 1)",
       }}
@@ -65,7 +65,7 @@ export default function CategoryBar({
               }}
               className="relative shrink-0 overflow-hidden"
               style={{
-                border: "0.5px solid var(--rych-border2)",
+                border: "0.5px solid var(--stitch-border2)",
                 padding: "6px 16px",
                 borderRadius: 2,
                 fontSize: 10,
@@ -77,15 +77,15 @@ export default function CategoryBar({
               onMouseEnter={(e) => {
                 if (!isActive) {
                   const el = e.currentTarget;
-                  el.style.borderColor = "var(--rych-parchment)";
-                  el.style.color = "var(--rych-parchment)";
+                  el.style.borderColor = "var(--stitch-parchment)";
+                  el.style.color = "var(--stitch-parchment)";
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
                   const el = e.currentTarget;
-                  el.style.borderColor = "var(--rych-border2)";
-                  el.style.color = "var(--rych-ash)";
+                  el.style.borderColor = "var(--stitch-border2)";
+                  el.style.color = "var(--stitch-ash)";
                 }
               }}
             >
@@ -94,7 +94,7 @@ export default function CategoryBar({
                   layoutId="active-pill"
                   className="absolute inset-0"
                   style={{
-                    background: "var(--rych-parchment)",
+                    background: "var(--stitch-parchment)",
                     borderRadius: 2,
                   }}
                   transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
@@ -103,7 +103,7 @@ export default function CategoryBar({
               <span
                 className="relative z-10"
                 style={{
-                  color: isActive ? "var(--rych-bg)" : "var(--rych-ash)",
+                  color: isActive ? "var(--stitch-bg)" : "var(--stitch-ash)",
                 }}
               >
                 {pill.label}
@@ -119,7 +119,7 @@ export default function CategoryBar({
         style={{
           fontSize: 10,
           letterSpacing: "0.08em",
-          color: "var(--rych-ash)",
+          color: "var(--stitch-ash)",
         }}
       >
         {total} items
@@ -136,8 +136,8 @@ export default function CategoryBar({
           style={{
             background: "transparent",
             border: "none",
-            color: "var(--rych-ash)",
-            fontFamily: "var(--rych-font-sans)",
+            color: "var(--stitch-ash)",
+            fontFamily: "var(--stitch-font-sans)",
             fontSize: 11,
             letterSpacing: "0.08em",
             cursor: "pointer",
@@ -171,7 +171,7 @@ export default function CategoryBar({
           style={{
             position: "absolute",
             right: 0,
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
             pointerEvents: "none",
           }}
         />

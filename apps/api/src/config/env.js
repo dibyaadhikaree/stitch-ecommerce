@@ -6,9 +6,9 @@ export const env = {
   port: process.env.PORT || 4000,
   clientUrl: process.env.CLIENT_URL || "http://localhost:3000",
   mongodbUri:
-    process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/rych_studio",
+    process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/stitch_studio",
   jwtSecret: process.env.JWT_SECRET || "replace-me",
-  adminEmail: process.env.ADMIN_EMAIL || "admin@rychstudio.com",
+  adminEmail: process.env.ADMIN_EMAIL || "admin@stitchstudio.com",
   adminPassword: process.env.ADMIN_PASSWORD || "change-me",
   webhookSecret: process.env.WEBHOOK_SECRET || "changeme",
   cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME || "",

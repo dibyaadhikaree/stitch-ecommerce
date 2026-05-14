@@ -69,7 +69,7 @@ export default function CollectionProductSection({
       <div
         style={{
           padding: "88px 24px 40px",
-          borderBottom: "0.5px solid var(--rych-border)",
+          borderBottom: "0.5px solid var(--stitch-border)",
         }}
       >
         {/* Headline — clip-path sweep-up reveal, same as HeroSection */}
@@ -87,7 +87,7 @@ export default function CollectionProductSection({
               ease: EASE,
             }}
             className="font-display text-hero-sm"
-            style={{ color: "var(--rych-parchment)", fontWeight: 300 }}
+            style={{ color: "var(--stitch-parchment)", fontWeight: 300 }}
           >
             {collection.name}
           </motion.h1>
@@ -101,7 +101,7 @@ export default function CollectionProductSection({
             style={{
               marginTop: 16,
               fontSize: 14,
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
               maxWidth: 520,
               lineHeight: 1.65,
             }}
@@ -135,7 +135,7 @@ export default function CollectionProductSection({
           style={{
             padding: "80px 24px",
             textAlign: "center",
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
           }}
         >
           <p

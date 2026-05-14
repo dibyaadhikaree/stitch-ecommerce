@@ -10,7 +10,7 @@ function SkeletonTile() {
     <div
       style={{
         aspectRatio: "1",
-        backgroundColor: "var(--rych-lift)",
+        backgroundColor: "var(--stitch-lift)",
         borderRadius: 0,
       }}
     />
@@ -30,11 +30,11 @@ export default function CollectionsPage() {
 
   if (isLoading) {
     return (
-      <main style={{ background: "var(--rych-bg)", minHeight: "100vh" }}>
+      <main style={{ background: "var(--stitch-bg)", minHeight: "100vh" }}>
         <div
           style={{
             padding: "88px 24px 24px",
-            borderBottom: "0.5px solid var(--rych-border)",
+            borderBottom: "0.5px solid var(--stitch-border)",
           }}
         >
           <span
@@ -42,7 +42,7 @@ export default function CollectionsPage() {
             style={{
               fontSize: 11,
               letterSpacing: "0.2em",
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
               textTransform: "uppercase",
             }}
           >
@@ -54,7 +54,7 @@ export default function CollectionsPage() {
           style={{
             padding: "24px",
             gap: "1px",
-            backgroundColor: "var(--rych-border)",
+            backgroundColor: "var(--stitch-border)",
           }}
         >
           {[...Array(4)].map((_, i) => (
@@ -66,11 +66,11 @@ export default function CollectionsPage() {
   }
 
   return (
-    <main style={{ background: "var(--rych-bg)", minHeight: "100vh" }}>
+    <main style={{ background: "var(--stitch-bg)", minHeight: "100vh" }}>
       <div
         style={{
           padding: "88px 24px 24px",
-          borderBottom: "0.5px solid var(--rych-border)",
+          borderBottom: "0.5px solid var(--stitch-border)",
         }}
       >
         <span
@@ -78,7 +78,7 @@ export default function CollectionsPage() {
           style={{
             fontSize: 11,
             letterSpacing: "0.2em",
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
             textTransform: "uppercase",
           }}
         >
@@ -90,14 +90,14 @@ export default function CollectionsPage() {
           style={{
             padding: "80px 24px",
             textAlign: "center",
-            color: "var(--rych-ash)",
+            color: "var(--stitch-ash)",
           }}
         >
           <p
             className="font-sans"
             style={{
               fontSize: 14,
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
             }}
           >
             No collections yet

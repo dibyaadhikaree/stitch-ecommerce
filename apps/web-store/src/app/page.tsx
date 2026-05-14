@@ -13,7 +13,7 @@ export default function Home() {
   const [introComplete, setIntroComplete] = useState(
     () =>
       typeof window !== "undefined" &&
-      !!sessionStorage.getItem("rych-intro-done"),
+      !!sessionStorage.getItem("stitch-intro-done"),
   );
 
   const { data: homepage } = useQuery({

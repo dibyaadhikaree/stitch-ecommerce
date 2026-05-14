@@ -15,27 +15,27 @@
 
 /* ── STITCH design tokens ────────────────────────────────── */
 :root {
-  --rych-bg: #111111;
-  --rych-surface: #1c1c1c;
-  --rych-lift: #242424;
-  --rych-border: #2a2a2a;
-  --rych-border2: #333333;
-  --rych-parchment: #f0ede6;
-  --rych-ash: #9e9b95;
-  --rych-smoke: #5a5855;
-  --rych-linen: #e8e4dc;
+  --stitch-bg: #111111;
+  --stitch-surface: #1c1c1c;
+  --stitch-lift: #242424;
+  --stitch-border: #2a2a2a;
+  --stitch-border2: #333333;
+  --stitch-parchment: #f0ede6;
+  --stitch-ash: #9e9b95;
+  --stitch-smoke: #5a5855;
+  --stitch-linen: #e8e4dc;
 
   /* Typography scale */
-  --rych-font-display: "Serenata", Georgia, serif;
-  --rych-font-sans: "Inter", system-ui, sans-serif;
+  --stitch-font-display: "Serenata", Georgia, serif;
+  --stitch-font-sans: "Inter", system-ui, sans-serif;
 
   /* Animation */
-  --rych-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --rych-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --rych-duration-fast: 200ms;
-  --rych-duration-base: 400ms;
-  --rych-duration-slow: 600ms;
-  --rych-duration-slower: 800ms;
+  --stitch-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --stitch-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --stitch-duration-fast: 200ms;
+  --stitch-duration-base: 400ms;
+  --stitch-duration-slow: 600ms;
+  --stitch-duration-slower: 800ms;
 }
 
 /* ── Base reset ────────────────────────────────────────── */
@@ -48,9 +48,9 @@
 }
 
 html {
-  background-color: var(--rych-bg);
-  color: var(--rych-parchment);
-  font-family: var(--rych-font-sans);
+  background-color: var(--stitch-bg);
+  color: var(--stitch-parchment);
+  font-family: var(--stitch-font-sans);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -59,15 +59,15 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: var(--rych-bg);
-  color: var(--rych-parchment);
+  background-color: var(--stitch-bg);
+  color: var(--stitch-parchment);
   overscroll-behavior: none;
 }
 
 /* ── Selection colour ──────────────────────────────────── */
 ::selection {
-  background: var(--rych-parchment);
-  color: var(--rych-bg);
+  background: var(--stitch-parchment);
+  color: var(--stitch-bg);
 }
 
 /* ── Scrollbar ─────────────────────────────────────────── */
@@ -75,10 +75,10 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--rych-bg);
+  background: var(--stitch-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--rych-border2);
+  background: var(--stitch-border2);
   border-radius: 2px;
 }
 
@@ -99,42 +99,42 @@ body {
 /* ── Utility classes ───────────────────────────────────── */
 @layer utilities {
   .font-display {
-    font-family: var(--rych-font-display);
+    font-family: var(--stitch-font-display);
   }
   .font-sans {
-    font-family: var(--rych-font-sans);
+    font-family: var(--stitch-font-sans);
   }
   .text-parchment {
-    color: var(--rych-parchment);
+    color: var(--stitch-parchment);
   }
   .text-ash {
-    color: var(--rych-ash);
+    color: var(--stitch-ash);
   }
   .text-smoke {
-    color: var(--rych-smoke);
+    color: var(--stitch-smoke);
   }
   .bg-night {
-    background-color: var(--rych-bg);
+    background-color: var(--stitch-bg);
   }
   .bg-surface {
-    background-color: var(--rych-surface);
+    background-color: var(--stitch-surface);
   }
   .bg-lift {
-    background-color: var(--rych-lift);
+    background-color: var(--stitch-lift);
   }
-  .border-rych {
-    border-color: var(--rych-border);
+  .border-stitch {
+    border-color: var(--stitch-border);
   }
-  .border-rych2 {
-    border-color: var(--rych-border2);
+  .border-stitch2 {
+    border-color: var(--stitch-border2);
   }
   .label {
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-  .ease-rych {
-    transition-timing-function: var(--rych-ease);
+  .ease-stitch {
+    transition-timing-function: var(--stitch-ease);
   }
 }
 
@@ -162,7 +162,7 @@ body {
   }
   .pdp-col-left {
     border-right: none !important;
-    border-bottom: 0.5px solid var(--rych-border);
+    border-bottom: 0.5px solid var(--stitch-border);
     padding: 24px 20px !important;
     min-height: unset !important;
   }
@@ -171,7 +171,7 @@ body {
   }
   .pdp-col-right {
     border-left: none !important;
-    border-top: 0.5px solid var(--rych-border);
+    border-top: 0.5px solid var(--stitch-border);
     padding: 24px 20px !important;
   }
 }

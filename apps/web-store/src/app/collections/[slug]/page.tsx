@@ -40,7 +40,7 @@ export default async function CollectionSlugPage({
 
   if (products.length === 0) {
     return (
-      <main style={{ background: "var(--rych-bg)", minHeight: "100vh" }}>
+      <main style={{ background: "var(--stitch-bg)", minHeight: "100vh" }}>
         <div
           style={{
             padding: "120px 24px 24px",
@@ -58,7 +58,7 @@ export default async function CollectionSlugPage({
               fontSize: "clamp(32px, 5vw, 56px)",
               lineHeight: 1.1,
               letterSpacing: "-0.015em",
-              color: "var(--rych-parchment)",
+              color: "var(--stitch-parchment)",
               marginBottom: 24,
             }}
           >
@@ -68,7 +68,7 @@ export default async function CollectionSlugPage({
             className="font-sans"
             style={{
               fontSize: 13,
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
               marginBottom: 40,
             }}
           >
@@ -79,16 +79,16 @@ export default async function CollectionSlugPage({
             style={{
               fontSize: 11,
               letterSpacing: "0.2em",
-              color: "var(--rych-ash)",
+              color: "var(--stitch-ash)",
               textTransform: "uppercase",
               textDecoration: "none",
               transition: "color 200ms",
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--rych-parchment)")
+              (e.currentTarget.style.color = "var(--stitch-parchment)")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--rych-ash)")
+              (e.currentTarget.style.color = "var(--stitch-ash)")
             }
           >
             Back to Collections
@@ -99,7 +99,7 @@ export default async function CollectionSlugPage({
   }
 
   return (
-    <main style={{ background: "var(--rych-bg)", minHeight: "100vh" }}>
+    <main style={{ background: "var(--stitch-bg)", minHeight: "100vh" }}>
       <CollectionProductSection collection={collection} products={products} />
     </main>
   );

@@ -25,7 +25,7 @@ export const useAuthStore = create<AuthState>()(
       setHydrated: (hydrated) => set({ hydrated }),
     }),
     {
-      name: "rych-admin-auth",
+      name: "stitch-admin-auth",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({ token: state.token, admin: state.admin }),
       onRehydrateStorage: () => (state) => {

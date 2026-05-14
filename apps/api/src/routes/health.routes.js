@@ -5,7 +5,7 @@ const router = Router();
 router.get("/", (_req, res) => {
   res.json({
     status: "ok",
-    service: "rych-studio-api",
+    service: "stitch-studio-api",
     timestamp: new Date().toISOString(),
   });
 });

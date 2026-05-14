@@ -1,40 +1,44 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { cn } from '@/lib/utils'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type Props = {
-  name: string
-  category: { name: string; slug: string }
-  description?: string
-  productCollection?: string
-}
+  name: string;
+  category: { name: string; slug: string };
+  description?: string;
+  productCollection?: string;
+};
 
 const PLACEHOLDER_FEATURES = [
-  'Premium quality fabric',
-  'Relaxed contemporary fit',
-  'Locally crafted in Nepal',
-  'Sustainable materials',
-  'Season-ready design',
-]
+  "Premium quality fabric",
+  "Relaxed contemporary fit",
+  "Locally crafted in Nepal",
+  "Sustainable materials",
+  "Season-ready design",
+];
 
-const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
+const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
-export default function ProductInfo({ name, category, productCollection }: Props) {
-  const reduced = useReducedMotion()
-  const [mounted, setMounted] = useState(false)
+export default function ProductInfo({
+  name,
+  category,
+  productCollection,
+}: Props) {
+  const reduced = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  const duration = (value: number) => (reduced ? 0 : value)
+  const duration = (value: number) => (reduced ? 0 : value);
 
   return (
-    <div className={cn('flex h-full flex-col')}>
+    <div className={cn("flex h-full flex-col")}>
       {/* Breadcrumb / category label */}
       <motion.div
         initial={{ opacity: 0, y: reduced ? 0 : 12 }}
@@ -44,12 +48,12 @@ export default function ProductInfo({ name, category, productCollection }: Props
       >
         <Link
           href={`/shop?category=${category.slug}`}
-          className={cn('inline-flex font-sans')}
+          className={cn("inline-flex font-sans")}
           style={{
             fontSize: 12,
-            letterSpacing: '0.16em',
-            color: 'var(--rych-smoke)',
-            textTransform: 'uppercase',
+            letterSpacing: "0.16em",
+            color: "var(--stitch-smoke)",
+            textTransform: "uppercase",
           }}
         >
           {category.name}
@@ -57,27 +61,27 @@ export default function ProductInfo({ name, category, productCollection }: Props
       </motion.div>
 
       {/* Product name */}
-      <div className={cn('overflow-hidden')} style={{ marginBottom: 28 }}>
+      <div className={cn("overflow-hidden")} style={{ marginBottom: 28 }}>
         <motion.h1
-          className={cn('font-display')}
+          className={cn("font-display")}
           initial={
             reduced
               ? { opacity: 0, y: 0 }
-              : { clipPath: 'inset(100% 0% 0% 0%)', opacity: 1 }
+              : { clipPath: "inset(100% 0% 0% 0%)", opacity: 1 }
           }
           animate={
             mounted
               ? reduced
                 ? { opacity: 1, y: 0 }
-                : { clipPath: 'inset(0% 0% 0% 0%)', opacity: 1 }
+                : { clipPath: "inset(0% 0% 0% 0%)", opacity: 1 }
               : undefined
           }
           transition={{ duration: duration(0.7), delay: 0.1, ease: EASE }}
           style={{
-            fontSize: 'clamp(30px, 3vw, 44px)',
+            fontSize: "clamp(30px, 3vw, 44px)",
             fontWeight: 300,
-            letterSpacing: '-0.01em',
-            color: 'var(--rych-parchment)',
+            letterSpacing: "-0.01em",
+            color: "var(--stitch-parchment)",
             lineHeight: 1.15,
           }}
         >
@@ -94,17 +98,17 @@ export default function ProductInfo({ name, category, productCollection }: Props
           width: 40,
           height: 1,
           marginBottom: 20,
-          transformOrigin: 'left',
-          backgroundColor: 'var(--rych-border2)',
+          transformOrigin: "left",
+          backgroundColor: "var(--stitch-border2)",
         }}
       />
 
       {/* Feature bullets */}
-      <div className={cn('flex flex-col')} style={{ gap: 8 }}>
+      <div className={cn("flex flex-col")} style={{ gap: 8 }}>
         {PLACEHOLDER_FEATURES.map((feature, index) => (
           <motion.div
             key={feature}
-            className={cn('flex items-center')}
+            className={cn("flex items-center")}
             initial={{ opacity: 0, x: reduced ? 0 : -8 }}
             animate={mounted ? { opacity: 1, x: 0 } : undefined}
             transition={{
@@ -114,13 +118,15 @@ export default function ProductInfo({ name, category, productCollection }: Props
             }}
             style={{ gap: 10 }}
           >
-            <span style={{ color: 'var(--rych-smoke)', flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--stitch-smoke)", flexShrink: 0 }}>
+              —
+            </span>
             <span
               className="font-sans"
               style={{
                 fontSize: 14,
-                letterSpacing: '0.03em',
-                color: 'var(--rych-ash)',
+                letterSpacing: "0.03em",
+                color: "var(--stitch-ash)",
                 lineHeight: 1.7,
               }}
             >
@@ -138,14 +144,14 @@ export default function ProductInfo({ name, category, productCollection }: Props
         className="font-sans"
         style={{
           fontSize: 12,
-          letterSpacing: '0.14em',
-          textTransform: 'uppercase',
-          color: 'var(--rych-smoke)',
-          marginTop: 'auto',
+          letterSpacing: "0.14em",
+          textTransform: "uppercase",
+          color: "var(--stitch-smoke)",
+          marginTop: "auto",
         }}
       >
-        {productCollection ?? ''}
+        {productCollection ?? ""}
       </motion.p>
     </div>
-  )
+  );
 }

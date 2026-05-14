@@ -32,7 +32,7 @@ export async function sendNewOrderEmail(order) {
 
     await transporter.sendMail({
       from: `STITCH Orders <${GMAIL_USER}>`,
-      to: "rychwear@gmail.com",
+      to: "stitchwear@gmail.com",
       subject: `New Order #${order.orderNumber}`,
       text: [
         `New order received on STITCH Studio.`,

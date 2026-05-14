@@ -3,13 +3,16 @@ import { Router } from "express";
 
 import { WEBHOOK_SECRET } from "../config/env.js";
 import { WebhookEvent } from "../models/WebhookEvent.js";
-import { createOrder, formatOrderForResponse } from "../services/order.service.js";
+import {
+  createOrder,
+  formatOrderForResponse,
+} from "../services/order.service.js";
 
 const router = Router();
 
 // POST /orders — receives website order webhooks
 router.post("/orders", async (req, res) => {
-  const signature = req.headers["x-rych-signature"];
+  const signature = req.headers["x-stitch-signature"];
   const idempotencyKey = req.headers["x-idempotency-key"];
 
   // Verify HMAC-SHA256 signature
@@ -27,7 +30,9 @@ router.post("/orders", async (req, res) => {
   if (idempotencyKey) {
     const existing = await WebhookEvent.findOne({ idempotencyKey }).lean();
     if (existing) {
-      return res.status(200).json({ message: "Already received", status: existing.status });
+      return res
+        .status(200)
+        .json({ message: "Already received", status: existing.status });
     }
   }
 
