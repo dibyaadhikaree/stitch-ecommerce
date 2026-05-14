@@ -2,10 +2,11 @@
 
 A full-stack monorepo for STICH CLOTHING — a premium minimal fashion brand. Built for editorial retail: a customer-facing storefront, an internal inventory and order management system, and a REST API that connects them.
 
-Admin Panel : https://stitch-ecommerce-admin.vercel.app/
+Admin Panel : https://stitch-ecommerce-admin.vercel.app
+
     Username : admin@gmail.com  
     Password : admin123
-
+    
 Storefront : https://stitch-ecommerce-storefront.vercel.app/
 
 ---
