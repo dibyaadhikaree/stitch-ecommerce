@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* ─── Luxury dark palette ───────────────────────────────────────────────────── */
+:root {
+  --background:           #080808;
+  --foreground:           #f0ede8;
+  --card:                 #0f0f0f;
+  --card-foreground:      #f0ede8;
+  --secondary:            #111111;
+  --secondary-foreground: #f0ede8;
+  --accent:               #c9a96e;
+  --accent-foreground:    #0a0a0a;
+  --muted-foreground:     #666666;
+  --text-tertiary:        #555555;
+  --text-quaternary:      #444444;
+  --border:               #1e1e1e;
+  --border-light:         #2a2a2a;
+  --ring:                 #c9a96e;
+  --gold:                 #c9a96e;
+  --gold-dim:             rgba(201, 169, 110, 0.13);
+  --danger:               #e05252;
+  --success:              #4caf82;
+}
+
+.dark {
+  --background:           #080808;
+  --foreground:           #f0ede8;
+  --card:                 #0f0f0f;
+  --card-foreground:      #f0ede8;
+  --secondary:            #111111;
+  --secondary-foreground: #f0ede8;
+  --accent:               #c9a96e;
+  --accent-foreground:    #0a0a0a;
+  --muted-foreground:     #666666;
+  --text-tertiary:        #555555;
+  --text-quaternary:      #444444;
+  --border:               #1e1e1e;
+  --border-light:         #2a2a2a;
+  --ring:                 #c9a96e;
+  --gold:                 #c9a96e;
+  --gold-dim:             rgba(201, 169, 110, 0.13);
+  --danger:               #e05252;
+  --success:              #4caf82;
+}
+
+/* ─── Tailwind design-token mapping ─────────────────────────────────────────── */
+@theme inline {
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-text-tertiary:        var(--text-tertiary);
+  --color-text-quaternary:      var(--text-quaternary);
+  --color-border:               var(--border);
+  --color-border-light:         var(--border-light);
+  --color-ring:                 var(--ring);
+  --color-gold:                 var(--gold);
+  --color-gold-dim:             var(--gold-dim);
+  --color-danger:               var(--danger);
+  --color-success:              var(--success);
+  --font-sans:                  var(--font-body);
+  --font-display:               var(--font-cormorant);
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+* {
+  border-color: var(--border);
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--gold-dim);
+}
+
+/* ─── Micro-interactions ────────────────────────────────────────────────────── */
+button,
+[role="button"] {
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.text-balance {
+  text-wrap: balance;
+}

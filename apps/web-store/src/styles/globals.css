@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom font: Serenata ─────────────────────────────── */
+@font-face {
+  font-family: "Serenata";
+  src:
+    url("/fonts/Serenata.woff2") format("woff2"),
+    url("/fonts/Serenata.woff") format("woff");
+  font-weight: 300 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── STITCH design tokens ────────────────────────────────── */
+:root {
+  --rych-bg: #111111;
+  --rych-surface: #1c1c1c;
+  --rych-lift: #242424;
+  --rych-border: #2a2a2a;
+  --rych-border2: #333333;
+  --rych-parchment: #f0ede6;
+  --rych-ash: #9e9b95;
+  --rych-smoke: #5a5855;
+  --rych-linen: #e8e4dc;
+
+  /* Typography scale */
+  --rych-font-display: "Serenata", Georgia, serif;
+  --rych-font-sans: "Inter", system-ui, sans-serif;
+
+  /* Animation */
+  --rych-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --rych-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --rych-duration-fast: 200ms;
+  --rych-duration-base: 400ms;
+  --rych-duration-slow: 600ms;
+  --rych-duration-slower: 800ms;
+}
+
+/* ── Base reset ────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--rych-bg);
+  color: var(--rych-parchment);
+  font-family: var(--rych-font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--rych-bg);
+  color: var(--rych-parchment);
+  overscroll-behavior: none;
+}
+
+/* ── Selection colour ──────────────────────────────────── */
+::selection {
+  background: var(--rych-parchment);
+  color: var(--rych-bg);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--rych-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rych-border2);
+  border-radius: 2px;
+}
+
+/* ── Confident scroll — weighted, not bouncy ───────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .shop-scroll-container {
+    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
+  }
+}
+
+/* Remove default tap highlight on mobile cards */
+.card-link {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+/* ── Utility classes ───────────────────────────────────── */
+@layer utilities {
+  .font-display {
+    font-family: var(--rych-font-display);
+  }
+  .font-sans {
+    font-family: var(--rych-font-sans);
+  }
+  .text-parchment {
+    color: var(--rych-parchment);
+  }
+  .text-ash {
+    color: var(--rych-ash);
+  }
+  .text-smoke {
+    color: var(--rych-smoke);
+  }
+  .bg-night {
+    background-color: var(--rych-bg);
+  }
+  .bg-surface {
+    background-color: var(--rych-surface);
+  }
+  .bg-lift {
+    background-color: var(--rych-lift);
+  }
+  .border-rych {
+    border-color: var(--rych-border);
+  }
+  .border-rych2 {
+    border-color: var(--rych-border2);
+  }
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .ease-rych {
+    transition-timing-function: var(--rych-ease);
+  }
+}
+
+/* Infinite scroll fade mask */
+.scroll-fade-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .pdp-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pdp-col-left {
+    border-right: none !important;
+    border-bottom: 0.5px solid var(--rych-border);
+    padding: 24px 20px !important;
+    min-height: unset !important;
+  }
+  .pdp-col-center {
+    min-height: 70vw !important;
+  }
+  .pdp-col-right {
+    border-left: none !important;
+    border-top: 0.5px solid var(--rych-border);
+    padding: 24px 20px !important;
+  }
+}
